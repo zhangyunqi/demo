@@ -1,0 +1,28 @@
+#jdbc配置
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@192.168.65.49:1521/logtest
+    username: log
+    password: log
+    druid:
+      initial-size: 1
+      max-active: 20
+      min-idle: 1
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 5
+      validation-query: select 1 from dual
+      validation-query-timeout: 30000
+      test-on-borrow: true
+      test-on-return: true
+      test-while-idle: true
+      time-between-eviction-runs-millis: 10000
+      min-evictable-idle-time-millis: 30000
+      async-close-connection-enable: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    database: oracle
+    database-platform: org.hibernate.dialect.Oracle12cDialect
