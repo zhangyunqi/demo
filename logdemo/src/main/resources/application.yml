@@ -1,3 +1,5 @@
+server:
+  port: 8081
 #jdbc配置
 spring:
   datasource:
@@ -26,3 +28,4 @@ spring:
       ddl-auto: create
     database: oracle
     database-platform: org.hibernate.dialect.Oracle12cDialect
+
